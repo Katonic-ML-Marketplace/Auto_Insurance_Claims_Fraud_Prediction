@@ -3,7 +3,7 @@ FROM python:3.8.2-slim
 COPY app.py .
 COPY data/insurance_fraud_claims.csv data/.
 COPY data/data_req.csv data/.
-COPY model/finalized_model.sav model/.
+COPY model/final_model.sav model/.
 COPY image/logo.png image/.
 COPY image/favicon.ico image/.
 COPY requirements.txt .
