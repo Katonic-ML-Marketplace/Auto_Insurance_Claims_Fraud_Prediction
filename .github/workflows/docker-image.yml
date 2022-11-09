@@ -1,0 +1,25 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+
+env:
+  REPO_NAME: ${{ github.event.repository.name }}
+  USERNAME: ${{secrets.username}}
+  PASSWORD: ${{secrets.password}}
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: docker login
+      run: |
+        docker login -u "${{ env.USERNAME }}" -p "${{ env.PASSWORD }}"
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag novneet3/accelerators:${{ env.REPO_NAME }}
+    - name: Docker Push
+      run: docker push novneet3/accelerators:${{ env.REPO_NAME }}
