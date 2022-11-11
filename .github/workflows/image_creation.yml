@@ -25,7 +25,6 @@ jobs:
     
     - name: Build the Docker image
       run: |
-        cp -r "${{ env.BUILD_PATH }}"/* .
         docker build . --file "${{ env.BUILD_PATH }}"/Dockerfile --tag "${{ env.REGISTRY_SERVER }}"/"${{ env.REGISTRY_NAMESPACE }}"/"${{ env.REPOSITORY_NAME }}":"${{ env.TAG }}"
       
     - name: Docker Push
