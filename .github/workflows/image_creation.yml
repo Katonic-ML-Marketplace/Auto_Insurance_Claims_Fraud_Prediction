@@ -25,7 +25,7 @@ jobs:
     
     - name: Build the Docker image
       run: |
-        docker build . --file "${{ env.BUILD_PATH }}"/Dockerfile --tag "${{ env.REGISTRY_SERVER }}"/"${{ env.REGISTRY_NAMESPACE }}"/"${{ env.REPOSITORY_NAME }}":"${{ env.TAG }}"
+        docker build . --tag "${{ env.REGISTRY_SERVER }}"/"${{ env.REGISTRY_NAMESPACE }}"/"${{ env.REPOSITORY_NAME }}":"${{ env.TAG }}"
       
     - name: Docker Push
       run: docker push "${{ env.REGISTRY_SERVER }}"/"${{ env.REGISTRY_NAMESPACE }}"/"${{ env.REPOSITORY_NAME }}":"${{ env.TAG }}"
