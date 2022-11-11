@@ -9,7 +9,7 @@ env:
   REGISTRY_NAMESPACE: katonic
   USER: ${{secrets.USER}}
   PASSWORD: ${{secrets.PASSWORD}}
-  REPOSITORY_NAME: app-store
+  REPOSITORY_NAME: accelerators
   TAG: auto-insurance-claims-fraud-prediction
 
 jobs:
