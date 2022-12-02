@@ -31,7 +31,7 @@ st.write('---')
 
 # Loads Dataset
 
-original_df = pd.read_csv('data/insurance fraud claims.csv', encoding = 'ISO-8859-1')
+original_df = pd.read_csv('data/insurance_fraud_claims.csv', encoding = 'ISO-8859-1')
 st.write('**Client Information**')
 st.write(original_df.head(20))
 st.write('---')
